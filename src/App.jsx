@@ -457,6 +457,32 @@ function App() {
         <h2>Let your mood<br /><span>choose for you.</span></h2>
         <button className="primary-btn" onClick={goToMenu}>Find My Brew →</button>
       </section>
+
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <div className="footer-logo">BY THE BREW<span>.</span></div>
+            <p>Good coffee. Good food. Good moments.</p>
+          </div>
+
+          <div className="footer-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#moments">Brew Moments</a>
+            <a href="#about">Our Story</a>
+          </div>
+
+          <div className="footer-note">
+            <span>COFFEE • FOOD • CONVERSATIONS</span>
+            <p>Made for slow mornings, long conversations and everything in between.</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>© 2026 By The Brew</span>
+          <span>Made with coffee &amp; good vibes.</span>
+        </div>
+      </footer>
     </div>
   );
 }
