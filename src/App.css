@@ -2,11 +2,6 @@
    BY THE BREW - APP.CSS
    ========================================================= */
 
-
-/* =========================
-   GLOBAL
-   ========================= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,7 +20,9 @@ body {
 }
 
 button,
-a {
+a,
+input,
+select {
   font-family: inherit;
 }
 
@@ -39,33 +36,27 @@ button {
   overflow-x: hidden;
 }
 
-
-/* =========================
-   NAVBAR
-   ========================= */
-
 .navbar {
   width: 100%;
-  height: 86px;
+  min-height: 86px;
   padding: 0 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
   background: #f4eee4;
   position: relative;
   z-index: 50;
 }
 
-.logo,
-.footer-logo {
+.logo {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: -0.5px;
 }
 
-.logo span,
-.footer-logo span {
+.logo span {
   color: #a66f46;
 }
 
@@ -87,6 +78,7 @@ button {
 }
 
 .order-btn {
+  position: relative;
   border: 1px solid #2c211b;
   background: transparent;
   color: #2c211b;
@@ -99,15 +91,6 @@ button {
 .order-btn:hover {
   background: #2c211b;
   color: #f4eee4;
-}
-
-
-/* =========================
-   CART COUNT
-   ========================= */
-
-.order-btn {
-  position: relative;
 }
 
 .cart-count {
@@ -124,11 +107,6 @@ button {
   font-size: 11px;
   font-weight: bold;
 }
-
-
-/* =========================
-   HERO
-   ========================= */
 
 .hero {
   width: 100%;
@@ -166,7 +144,13 @@ button {
   font-weight: 400;
 }
 
-.hero h1 span {
+.hero h1 span,
+.intro h2 span,
+.menu-heading h2 span,
+.menu-cta h2 span,
+.moments-heading h2 span,
+.checkout-modal h2 span,
+.moment-modal h2 span {
   color: #a66f46;
   font-style: italic;
 }
@@ -186,20 +170,19 @@ button {
   margin-top: 38px;
 }
 
-
-/* =========================
-   BUTTONS
-   ========================= */
+.primary-btn,
+.secondary-btn {
+  padding: 16px 28px;
+  border-radius: 30px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
 
 .primary-btn {
   border: 1px solid #2c211b;
   background: #2c211b;
   color: #f4eee4;
-  padding: 16px 28px;
-  border-radius: 30px;
-  font-size: 12px;
   font-weight: bold;
-  transition: all 0.3s ease;
 }
 
 .primary-btn:hover {
@@ -212,21 +195,12 @@ button {
   border: 1px solid #2c211b;
   background: transparent;
   color: #2c211b;
-  padding: 16px 28px;
-  border-radius: 30px;
-  font-size: 12px;
-  transition: all 0.3s ease;
 }
 
 .secondary-btn:hover {
   background: #2c211b;
   color: #f4eee4;
 }
-
-
-/* =========================
-   HERO PHOTO
-   ========================= */
 
 .hero-photo {
   position: relative;
@@ -236,7 +210,9 @@ button {
   flex-shrink: 0;
 }
 
-.hero-photo img {
+.hero-photo img,
+.food-image img,
+.moment-card img {
   display: block;
   width: 100%;
   height: 100%;
@@ -254,11 +230,6 @@ button {
   font-size: 10px;
   letter-spacing: 4px;
 }
-
-
-/* =========================
-   INTRO
-   ========================= */
 
 .intro {
   background: #e8ded0;
@@ -283,11 +254,6 @@ button {
   font-size: clamp(50px, 6vw, 85px);
 }
 
-.intro h2 span {
-  color: #a66f46;
-  font-style: italic;
-}
-
 .intro > p:last-child {
   max-width: 600px;
   margin: 35px auto 0;
@@ -295,11 +261,6 @@ button {
   font-size: 16px;
   line-height: 1.8;
 }
-
-
-/* =========================
-   MENU SECTION
-   ========================= */
 
 .menu-section {
   width: 100%;
@@ -324,11 +285,6 @@ button {
   font-size: clamp(55px, 6vw, 90px);
 }
 
-.menu-heading h2 span {
-  color: #a66f46;
-  font-style: italic;
-}
-
 .view-menu-btn {
   border: none;
   border-bottom: 1px solid #2c211b;
@@ -338,11 +294,6 @@ button {
   font-size: 12px;
   white-space: nowrap;
 }
-
-
-/* =========================
-   MENU CATEGORIES
-   ========================= */
 
 .menu-categories {
   display: flex;
@@ -371,11 +322,6 @@ button {
   transform: translateY(-2px);
 }
 
-
-/* =========================
-   MENU GRID
-   ========================= */
-
 .menu-grid {
   width: 100%;
   display: grid;
@@ -394,11 +340,6 @@ button {
   transform: translateY(-5px);
 }
 
-
-/* =========================
-   FOOD IMAGE
-   ========================= */
-
 .food-image {
   position: relative;
   width: 100%;
@@ -407,14 +348,11 @@ button {
 }
 
 .food-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.menu-card:hover .food-image img {
+.menu-card:hover .food-image img,
+.moment-card:hover img {
   transform: scale(1.04);
 }
 
@@ -431,11 +369,6 @@ button {
   font-size: 20px;
   line-height: 1;
 }
-
-
-/* =========================
-   MENU CARD CONTENT
-   ========================= */
 
 .menu-card-content {
   padding: 25px;
@@ -477,33 +410,45 @@ button {
   font-size: 14px;
 }
 
-.add-btn {
+.quantity-controls,
+.checkout-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.add-btn,
+.quantity-btn {
   width: 38px;
   height: 38px;
   border: 1px solid #2c211b;
   border-radius: 50%;
   background: transparent;
   color: #2c211b;
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1;
   transition: all 0.3s ease;
 }
 
-.add-btn:hover {
+.add-btn:hover,
+.quantity-btn:hover {
   background: #2c211b;
   color: #f4eee4;
 }
 
 .add-btn:active {
-  transform: scale(0.85);
+  transform: scale(0.88);
 }
 
+.quantity-value {
+  min-width: 18px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-/* =========================
-   EMPTY MENU
-   ========================= */
-
-.empty-menu {
+.empty-menu,
+.empty-checkout {
   text-align: center;
   padding: 60px 20px;
   color: #74645a;
@@ -511,73 +456,39 @@ button {
   font-size: 20px;
 }
 
-
-/* =========================================================
-   BREW MOMENTS
-   ========================================================= */
-
 .moments-section {
   width: 100%;
   background: #2c211b;
   color: #f4eee4;
   padding: 120px 7% 130px;
 }
-/* =========================
-   MOMENTS CARD TITLE
-   ========================= */
-
-.moment-card {
-  position: relative;
-}
-
-.moment-card-content {
-  text-align: center;
-}
-
-.moment-card-content h3 {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-
-/* =========================
-   MOMENTS HEADING
-   ========================= */
 
 .moments-heading {
   width: 100%;
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  align-items: end;
-  gap: 60px;
   margin-bottom: 65px;
+  text-align: center;
 }
 
 .moments-heading .section-label {
+  margin-bottom: 35px;
   color: #c9a98e;
-  align-self: end;
-  padding-bottom: 8px;
+  text-align: left;
 }
 
 .moments-heading h2 {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1000px;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(55px, 7vw, 100px);
   font-weight: 400;
   line-height: 0.92;
   letter-spacing: -5px;
+  text-align: center;
 }
 
 .moments-heading h2 span {
   color: #c9a98e;
-  font-style: italic;
 }
-
-
-/* =========================
-   MOMENTS GRID
-   ========================= */
 
 .moments-grid {
   width: 100%;
@@ -586,11 +497,6 @@ button {
   gap: 20px;
 }
 
-
-/* =========================
-   MOMENT CARDS
-   ========================= */
-
 .moment-card {
   position: relative;
   overflow: hidden;
@@ -598,60 +504,24 @@ button {
   height: 480px;
 }
 
-.moment-card:nth-child(1) {
-  grid-column: span 7;
-}
-
-.moment-card:nth-child(2) {
-  grid-column: span 5;
-}
-
-.moment-card:nth-child(3) {
-  grid-column: span 5;
-}
-
-.moment-card:nth-child(4) {
-  grid-column: span 7;
-}
-
+.moment-card:nth-child(1) { grid-column: span 7; }
+.moment-card:nth-child(2) { grid-column: span 5; }
+.moment-card:nth-child(3) { grid-column: span 5; }
+.moment-card:nth-child(4) { grid-column: span 7; }
 .moment-card:nth-child(5) {
   grid-column: 3 / span 8;
   height: 520px;
 }
 
-
-/* =========================
-   MOMENT IMAGES
-   ========================= */
-
 .moment-card img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
   transition: transform 0.7s ease;
 }
-
-.moment-card:hover img {
-  transform: scale(1.04);
-}
-
-
-/* =========================
-   MOMENT OVERLAY
-   ========================= */
 
 .moment-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(25, 17, 13, 0.82) 0%,
-    rgba(25, 17, 13, 0.35) 38%,
-    rgba(25, 17, 13, 0) 72%
-  );
+  background: linear-gradient(to top, rgba(25, 17, 13, 0.82) 0%, rgba(25, 17, 13, 0.35) 38%, rgba(25, 17, 13, 0) 72%);
   pointer-events: none;
 }
 
@@ -663,7 +533,7 @@ button {
   z-index: 2;
 }
 
-.moment-overlay span {
+.moment-overlay > span:first-child {
   display: block;
   color: #c9a98e;
   font-size: 10px;
@@ -679,644 +549,15 @@ button {
   font-weight: 400;
 }
 
-
-/* =========================
-   CART BAR
-   ========================= */
-
-.cart-bar {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(650px, 90%);
-  padding: 16px 20px;
-  background: #2c211b;
-  color: #f4eee4;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  z-index: 100;
-  box-shadow: 0 15px 40px rgba(44, 33, 27, 0.25);
-}
-
-.cart-bar div {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.cart-bar strong {
-  color: #f4eee4;
-}
-
-.cart-bar span {
-  color: #c9bdb2;
-  font-size: 13px;
-}
-
-.cart-bar button {
-  border: none;
-  background: #c9a98e;
-  color: #2c211b;
-  padding: 11px 18px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.cart-bar button:hover {
-  background: #f4eee4;
-  transform: translateY(-2px);
-}
-
-
-/* =========================
-   CTA
-   ========================= */
-
-.menu-cta {
-  background: #e8ded0;
-  padding: 130px 7%;
-  text-align: center;
-}
-
-.menu-cta .section-label {
-  margin-bottom: 30px;
-}
-
-.menu-cta h2 {
-  font-size: clamp(55px, 7vw, 95px);
-}
-
-.menu-cta h2 span {
-  color: #a66f46;
-  font-style: italic;
-}
-
-.menu-cta .primary-btn {
-  margin-top: 40px;
-}
-
-
-/* =========================
-   FOOTER
-   ========================= */
-
-footer {
-  background: #2c211b;
-  color: #f4eee4;
-  padding: 70px 7%;
-  text-align: center;
-}
-
-.footer-logo {
-  font-size: 28px;
-}
-
-.footer-logo span {
-  color: #c9a98e;
-}
-
-footer > p {
-  margin-top: 15px;
-  color: #c9bdb2;
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-footer .copyright {
-  margin-top: 35px;
-  color: #8d7c70;
+.moment-overlay p {
+  margin-top: 8px;
+  color: #d7c8bc;
   font-size: 11px;
-  letter-spacing: 0;
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-  .navbar {
-    padding: 0 5%;
-  }
-
-  .nav-links {
-    gap: 20px;
-  }
-
-  .hero {
-    padding: 60px 5%;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-  }
-
-  .hero h1 {
-    font-size: clamp(55px, 7vw, 80px);
-  }
-
-  .hero-photo {
-    height: 560px;
-  }
-
-  .menu-section,
-  .moments-section {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .moments-heading {
-    grid-template-columns: 1fr 1.5fr;
-  }
+.user-moment-card {
+  grid-column: span 6;
 }
-
-
-/* =========================
-   TABLET
-   ========================= */
-
-@media (max-width: 800px) {
-
-  .navbar {
-    height: auto;
-    min-height: 75px;
-    padding: 20px 6%;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 25px;
-  }
-
-  .hero {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    padding: 70px 6%;
-    gap: 50px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-  }
-
-  .hero h1 {
-    font-size: clamp(58px, 14vw, 90px);
-    letter-spacing: -4px;
-  }
-
-  .hero-photo {
-    height: 520px;
-  }
-
-  .intro {
-    padding: 90px 8%;
-  }
-
-  .menu-section {
-    padding: 90px 6%;
-  }
-
-  .menu-heading {
-    display: block;
-  }
-
-  .view-menu-btn {
-    margin-top: 30px;
-  }
-
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-
-  /* =========================
-     MOMENTS MOBILE
-     ========================= */
-
-  .moments-section {
-    padding: 90px 6% 100px;
-  }
-
-  .moments-heading {
-    display: block;
-    margin-bottom: 45px;
-  }
-
-  .moments-heading .section-label {
-    display: block;
-    margin-bottom: 25px;
-  }
-
-  .moments-heading h2 {
-    font-size: clamp(55px, 12vw, 80px);
-    letter-spacing: -3px;
-  }
-
-  .moments-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .moment-card,
-  .moment-card:nth-child(1),
-  .moment-card:nth-child(2),
-  .moment-card:nth-child(3),
-  .moment-card:nth-child(4),
-  .moment-card:nth-child(5) {
-    grid-column: auto;
-    width: 100%;
-    height: 430px;
-  }
-
-  .moment-card img,
-  .moment-card:nth-child(5) img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .moment-overlay {
-    left: 22px;
-    right: 22px;
-    bottom: 22px;
-  }
-
-  .moment-overlay h3 {
-    font-size: 27px;
-  }
-
-  .menu-cta {
-    padding: 100px 6%;
-  }
-}
-
-
-/* =========================
-   SMALL MOBILE
-   ========================= */
-
-@media (max-width: 600px) {
-
-  .navbar {
-    padding: 18px 5%;
-  }
-
-  .logo {
-    font-size: 17px;
-  }
-
-  .order-btn {
-    padding: 10px 14px;
-    font-size: 11px;
-  }
-
-  .nav-links {
-    gap: 16px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 3px;
-  }
-
-  .nav-links a {
-    font-size: 11px;
-    white-space: nowrap;
-  }
-
-  .hero {
-    padding: 55px 5% 70px;
-  }
-
-  .eyebrow {
-    font-size: 9px;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
-  }
-
-  .hero h1 {
-    font-size: 58px;
-    letter-spacing: -3px;
-  }
-
-  .hero-description {
-    font-size: 14px;
-    margin-top: 28px;
-  }
-
-  .hero-buttons {
-    flex-wrap: wrap;
-    margin-top: 30px;
-  }
-
-  .hero-photo {
-    height: 430px;
-  }
-
-  .intro {
-    padding: 80px 7%;
-  }
-
-  .intro h2 {
-    font-size: 52px;
-  }
-
-  .menu-section {
-    padding: 75px 5%;
-  }
-
-  .menu-heading h2 {
-    font-size: 55px;
-  }
-
-  .menu-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .food-image {
-    height: 330px;
-  }
-
-  .menu-card-content {
-    padding: 22px;
-  }
-
-  .moments-section {
-    padding: 75px 5% 85px;
-  }
-
-  .moments-heading h2 {
-    font-size: 55px;
-  }
-
-  .moment-card,
-  .moment-card:nth-child(1),
-  .moment-card:nth-child(2),
-  .moment-card:nth-child(3),
-  .moment-card:nth-child(4),
-  .moment-card:nth-child(5) {
-    height: 360px;
-  }
-
-  .moment-overlay h3 {
-    font-size: 24px;
-  }
-
-  .cart-bar {
-    bottom: 15px;
-    width: 92%;
-    padding: 13px 15px;
-    border-radius: 25px;
-  }
-
-  .cart-bar div {
-    display: block;
-  }
-
-  .cart-bar span {
-    display: block;
-    margin-top: 3px;
-  }
-
-  .cart-bar button {
-    white-space: nowrap;
-    padding: 10px 13px;
-  }
-
-  .menu-cta {
-    padding: 80px 5%;
-  }
-
-  .menu-cta h2 {
-    font-size: 55px;
-  }
-
-  footer {
-    padding: 55px 5%;
-  }
-}
-
-
-/* =========================
-   FINAL LAYOUT FIX
-   ========================= */
-
-.app {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.navbar {
-  width: 100%;
-}
-
-.hero {
-  width: 100%;
-}
-
-.hero-photo {
-  flex-shrink: 0;
-}
-
-.hero-photo img,
-.food-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.menu-section {
-  width: 100%;
-}
-
-.menu-grid {
-  width: 100%;
-}
-
-.menu-card {
-  min-width: 0;
-}
-/* =========================================================
-   FINAL MOMENTS HEADING CENTER FIX
-   ========================================================= */
-
-.moments-heading {
-  width: 100%;
-  display: block !important;
-  position: relative;
-  margin-bottom: 65px;
-  text-align: center;
-}
-
-.moments-heading > div {
-  width: 100%;
-  display: block;
-  text-align: center;
-}
-
-.moments-heading .section-label {
-  display: block;
-  width: 100%;
-  text-align: left;
-  margin-bottom: 35px;
-  padding-bottom: 0;
-}
-
-.moments-heading h2 {
-  width: 100%;
-  margin: 0 auto !important;
-  text-align: center !important;
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -5px;
-}
-
-.moments-heading h2 span {
-  color: #c9a98e;
-  font-style: italic;
-}
-
-.moments-intro {
-  width: 100%;
-  max-width: 650px;
-  margin: 35px auto 0;
-  text-align: center;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-  .moments-heading {
-    display: block !important;
-    text-align: center;
-    margin-bottom: 45px;
-  }
-
-  .moments-heading > div {
-    width: 100%;
-    text-align: center;
-  }
-
-  .moments-heading .section-label {
-    text-align: left;
-    margin-bottom: 25px;
-  }
-
-  .moments-heading h2 {
-    width: 100%;
-    text-align: center !important;
-    letter-spacing: -3px;
-  }
-
-  .moments-intro {
-    text-align: center;
-    margin-top: 30px;
-  }
-}
-
-@media (max-width: 600px) {
-  .moments-heading h2 {
-    width: 100%;
-    text-align: center !important;
-    letter-spacing: -3px;
-  }
-
-  .moments-intro {
-    text-align: center;
-  }
-}
-
-/* =========================================================
-   STAGE 1 - CART, CHECKOUT & USER MOMENTS
-   ========================================================= */
-
-/* Quantity controls */
-
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.quantity-btn {
-  width: 38px;
-  height: 38px;
-  border: 1px solid #2c211b;
-  border-radius: 50%;
-  background: transparent;
-  color: #2c211b;
-  font-size: 22px;
-  line-height: 1;
-  transition: all 0.3s ease;
-}
-
-.quantity-btn:hover {
-  background: #2c211b;
-  color: #f4eee4;
-}
-
-.quantity-value {
-  min-width: 18px;
-  text-align: center;
-  font-size: 13px;
-  font-weight: bold;
-}
-
-/* Cart actions */
-
-.cart-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cart-bar .continue-ordering-btn {
-  border: 1px solid #c9a98e;
-  background: transparent;
-  color: #f4eee4;
-  padding: 10px 15px;
-  border-radius: 25px;
-  font-size: 12px;
-}
-
-.cart-bar .checkout-btn {
-  border: none;
-  background: #c9a98e;
-  color: #2c211b;
-  padding: 11px 18px;
-  border-radius: 25px;
-  font-size: 12px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.cart-bar .continue-ordering-btn:hover {
-  background: #f4eee4;
-  color: #2c211b;
-}
-
-.cart-bar .checkout-btn:hover {
-  background: #f4eee4;
-  transform: translateY(-2px);
-}
-
-/* Add moment card */
 
 .add-moment-card {
   grid-column: 3 / span 8;
@@ -1330,7 +571,6 @@ footer .copyright {
   align-items: center;
   justify-content: center;
   text-align: center;
-  cursor: pointer;
   transition: all 0.4s ease;
 }
 
@@ -1350,7 +590,6 @@ footer .copyright {
   color: #c9a98e;
   font-family: Georgia, serif;
   font-size: 32px;
-  font-weight: 300;
   margin-bottom: 22px;
 }
 
@@ -1379,18 +618,88 @@ footer .copyright {
   transform: translateX(5px);
 }
 
-.user-moment-card {
-  grid-column: span 6;
+.cart-bar {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(760px, 92%);
+  padding: 16px 20px;
+  background: #2c211b;
+  color: #f4eee4;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 100;
+  box-shadow: 0 15px 40px rgba(44, 33, 27, 0.25);
 }
 
-.moment-overlay p {
-  margin-top: 8px;
-  color: #d7c8bc;
-  font-size: 11px;
-  letter-spacing: 0.5px;
+.cart-bar div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* Modal */
+.cart-bar strong {
+  color: #f4eee4;
+}
+
+.cart-bar span {
+  color: #c9bdb2;
+  font-size: 13px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-bar button {
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.continue-ordering-btn {
+  border: 1px solid #c9a98e;
+  background: transparent;
+  color: #f4eee4;
+}
+
+.checkout-btn {
+  border: none;
+  background: #c9a98e;
+  color: #2c211b;
+  font-weight: bold;
+}
+
+.cart-bar button:hover {
+  background: #f4eee4;
+  color: #2c211b;
+  transform: translateY(-2px);
+}
+
+.menu-cta {
+  background: #e8ded0;
+  padding: 130px 7%;
+  text-align: center;
+}
+
+.menu-cta .section-label {
+  margin-bottom: 30px;
+}
+
+.menu-cta h2 {
+  font-size: clamp(55px, 7vw, 95px);
+}
+
+.menu-cta .primary-btn {
+  margin-top: 40px;
+}
 
 .modal-backdrop {
   position: fixed;
@@ -1445,12 +754,6 @@ footer .copyright {
   letter-spacing: -3px;
 }
 
-.checkout-modal h2 span,
-.moment-modal h2 span {
-  color: #a66f46;
-  font-style: italic;
-}
-
 .checkout-items {
   margin-top: 35px;
   border-top: 1px solid #d2c5b8;
@@ -1476,12 +779,6 @@ footer .copyright {
   font-size: 12px;
 }
 
-.checkout-quantity {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .checkout-quantity button {
   width: 28px;
   height: 28px;
@@ -1498,37 +795,36 @@ footer .copyright {
   justify-content: space-between;
   padding: 25px 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
+  font-size: 24px;
+  border-bottom: 1px solid #d2c5b8;
 }
 
 .checkout-form,
 .moment-form {
+  margin-top: 25px;
   display: grid;
-  gap: 17px;
+  gap: 16px;
 }
 
 .checkout-form label,
 .moment-form label {
   display: grid;
   gap: 8px;
-  color: #4e4037;
-  font-size: 11px;
+  color: #5e4d42;
+  font-size: 12px;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 .checkout-form input,
 .checkout-form select,
 .moment-form input {
   width: 100%;
-  border: 1px solid #c7b8aa;
-  background: #eee5da;
+  border: 1px solid #c8baad;
+  background: #fffaf3;
   color: #2c211b;
-  padding: 14px 15px;
-  border-radius: 2px;
+  padding: 13px 14px;
   outline: none;
-  font-family: inherit;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .checkout-form input:focus,
@@ -1538,16 +834,15 @@ footer .copyright {
 }
 
 .place-order-btn {
-  margin-top: 10px;
+  margin-top: 8px;
   border: none;
   background: #2c211b;
   color: #f4eee4;
-  padding: 16px 22px;
-  border-radius: 30px;
+  padding: 15px 20px;
   font-size: 12px;
   font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
+  border-radius: 30px;
+  transition: all 0.3s ease;
 }
 
 .place-order-btn:hover {
@@ -1557,52 +852,51 @@ footer .copyright {
 
 .order-success {
   text-align: center;
-  padding: 25px 0 5px;
+  padding: 20px 0;
+}
+
+.order-success .section-label {
+  margin-top: 20px;
+}
+
+.order-success > p:not(.section-label):not(.order-number) {
+  max-width: 430px;
+  margin: 25px auto;
+  color: #74645a;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .success-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 25px;
-  border: 1px solid #a66f46;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  background: #2c211b;
+  color: #f4eee4;
+  font-size: 34px;
+}
+
+.order-number {
+  margin: 15px 0 30px;
   color: #a66f46;
-  font-size: 25px;
-}
-
-.order-success h2 {
-  margin-bottom: 25px;
-}
-
-.order-success > p:not(.section-label) {
-  max-width: 420px;
-  margin: 0 auto 30px;
-  color: #74645a;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-/* Moment upload */
-
-.moment-form {
-  margin-top: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .moment-upload {
-  position: relative;
   min-height: 250px;
   border: 1px dashed #b7a99d;
-  background: #eee5da;
+  background: #fffaf3;
   display: flex !important;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  cursor: pointer;
   text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .moment-upload input {
@@ -1612,29 +906,31 @@ footer .copyright {
   cursor: pointer;
 }
 
+.moment-upload > span,
+.moment-upload > strong,
+.moment-upload > small {
+  pointer-events: none;
+}
+
 .moment-upload > span {
-  width: 48px;
-  height: 48px;
-  border: 1px solid #a66f46;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 42px;
+  line-height: 1;
   color: #a66f46;
-  font-size: 27px;
-  margin-bottom: 14px;
 }
 
-.moment-upload strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 21px;
-  font-weight: 400;
+.moment-upload > strong {
+  display: block;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
-.moment-upload small {
-  margin-top: 7px;
+.moment-upload > small {
+  display: block;
+  margin-top: 6px;
   color: #74645a;
-  font-size: 10px;
+  font-weight: 400;
 }
 
 .moment-upload img {
@@ -1643,46 +939,119 @@ footer .copyright {
   object-fit: cover;
 }
 
-/* Modal responsive */
+@media (max-width: 1000px) {
+  .navbar { padding: 0 5%; }
+  .nav-links { gap: 20px; }
+  .hero { padding: 60px 5%; grid-template-columns: 1fr 1fr; gap: 35px; }
+  .hero h1 { font-size: clamp(55px, 7vw, 80px); }
+  .hero-photo { height: 560px; }
+  .menu-section, .moments-section { padding-left: 5%; padding-right: 5%; }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    min-height: 75px;
+    padding: 20px 6%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 70px 6%;
+    gap: 50px;
+  }
+
+  .hero-content { max-width: 100%; }
+  .hero-photo { height: 520px; }
+  .intro { padding: 90px 8%; }
+  .menu-section { padding: 90px 6%; }
+  .menu-heading { display: block; }
+  .view-menu-btn { margin-top: 30px; }
+
+  .moments-section { padding: 90px 6% 100px; }
+  .moments-heading { margin-bottom: 45px; }
+  .moments-heading .section-label { margin-bottom: 25px; }
+  .moments-heading h2 { font-size: clamp(55px, 12vw, 80px); letter-spacing: -3px; }
+
+  .moments-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .moment-card,
+  .moment-card:nth-child(1),
+  .moment-card:nth-child(2),
+  .moment-card:nth-child(3),
+  .moment-card:nth-child(4),
+  .moment-card:nth-child(5),
+  .user-moment-card,
+  .add-moment-card {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .moment-card,
+  .moment-card:nth-child(5) {
+    height: 430px;
+  }
+
+  .add-moment-card { min-height: 300px; }
+  .menu-cta { padding: 100px 6%; }
+}
 
 @media (max-width: 600px) {
-  .cart-actions {
-    gap: 6px;
+  .navbar { padding: 18px 5%; }
+  .logo { font-size: 17px; }
+  .order-btn { padding: 10px 14px; font-size: 11px; }
+  .nav-links { gap: 16px; justify-content: flex-start; overflow-x: auto; padding-bottom: 3px; }
+  .nav-links a { font-size: 11px; white-space: nowrap; }
+  .hero { padding: 55px 5% 70px; }
+  .eyebrow { font-size: 9px; letter-spacing: 3px; margin-bottom: 25px; }
+  .hero h1 { font-size: 58px; letter-spacing: -3px; }
+  .hero-description { font-size: 14px; margin-top: 28px; }
+  .hero-buttons { flex-wrap: wrap; margin-top: 30px; }
+  .hero-photo { height: 430px; }
+  .intro { padding: 80px 7%; }
+  .intro h2 { font-size: 52px; }
+  .menu-section { padding: 75px 5%; }
+  .menu-heading h2 { font-size: 55px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .food-image { height: 330px; }
+  .menu-card-content { padding: 22px; }
+  .moments-section { padding: 75px 5% 85px; }
+  .moments-heading h2 { font-size: 55px; }
+  .moment-card, .moment-card:nth-child(5) { height: 360px; }
+  .moment-overlay { left: 22px; right: 22px; bottom: 22px; }
+  .moment-overlay h3 { font-size: 24px; }
+  .add-moment-card strong { font-size: 32px; }
+
+  .cart-bar {
+    bottom: 15px;
+    width: 92%;
+    padding: 13px 15px;
+    border-radius: 25px;
   }
 
-  .cart-bar .continue-ordering-btn {
-    display: none;
-  }
-
-  .cart-bar .checkout-btn {
-    padding: 10px 14px;
-  }
+  .cart-bar div:first-child { display: block; }
+  .cart-bar span { display: block; margin-top: 3px; }
+  .cart-actions { gap: 6px; }
+  .cart-bar button { white-space: nowrap; padding: 10px 12px; }
 
   .checkout-modal,
-  .moment-modal {
-    padding: 38px 22px 25px;
-  }
-
-  .checkout-item {
-    grid-template-columns: 1fr auto;
-  }
-
-  .checkout-item > strong:last-child {
-    grid-column: 1 / -1;
-    justify-self: end;
-  }
-
-  .add-moment-card,
-  .user-moment-card {
-    grid-column: auto;
-    min-height: 360px;
-  }
-
-  .add-moment-card {
-    padding: 35px 20px;
-  }
-
-  .add-moment-card strong {
-    font-size: 32px;
-  }
+  .moment-modal { padding: 38px 22px 25px; }
+  .checkout-item { grid-template-columns: 1fr auto; }
+  .checkout-item > strong:last-child { grid-column: 2; grid-row: 1; }
+  .checkout-quantity { grid-column: 1 / -1; }
+  .menu-cta { padding: 80px 5%; }
+  .menu-cta h2 { font-size: 55px; }
 }
